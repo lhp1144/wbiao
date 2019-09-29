@@ -3,7 +3,7 @@
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> 
     </div> -->
-    <footer>
+    <footer ref="ft">
       <div>
         <router-link to="/">
          <div class="iconfont icon-shouye1"></div>
@@ -40,6 +40,15 @@
 
 export default {
   name: 'app',
+  mounted(){
+    this.$eventBus.$on("showHideNav",(flag)=>{
+      if(flag){
+        this.$refs.ft.style.display = 'flex';
+      }else{
+        this.$refs.ft.style.display = 'none';
+      }
+    });
+  },
   data() {
     return {
       
@@ -59,6 +68,10 @@ export default {
     display: flex;
     position: fixed;
     bottom: 0px;
+	z-index: 1;
+	background: white;
+	z-index: 1;
+	
 
   }
   footer>div{

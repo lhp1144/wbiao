@@ -8,6 +8,11 @@ module.exports = {
                 ws: true,
                 changeOrigin: true
             },
+            '/user': {
+                target: 'http://localhost:5000',
+                ws: true,
+                changeOrigin: true
+            },
         }
     },
     lintOnSave: false // 关闭 eslint 检查
